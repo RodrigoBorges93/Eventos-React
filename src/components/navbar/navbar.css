@@ -1,0 +1,14 @@
+.navbar {
+  background-color: #614ea6;
+}
+
+.nav-item a{
+  color: #fff;
+  transition: .2s ease-in
+
+}
+
+.nav-item a:hover{
+  color: #fd79a8;
+
+}
