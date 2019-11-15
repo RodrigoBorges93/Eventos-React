@@ -8,15 +8,12 @@ import firebase from '../../config/firebase'
 
 function Home({match}){
 
-      if(match.params.parametro){
-
-
-      }
       const [eventos, setEventos] = useState([]);
       const [pesquisa, setPesquisa] = useState('');
       let listaEventos = [];
       const usuario = useSelector(state => state.usuarioEmail);
 
+      // Gets only events searched in the search area;
       if(match.params.parametro){
 
               useEffect(() =>{
@@ -30,11 +27,13 @@ function Home({match}){
                       }
 
                       })
+                      // Insert all elements in eventos variable.
                       setEventos(listaEventos);
                   })
               });
 
       }
+      // Gets all events
       else{
 
       useEffect(() =>{
