@@ -22,7 +22,7 @@ const App = () => (
     <Route exact path="/" component={Home}/>
     <Route exact path="/recuperar-senha" component={UsuarioRecuperarSenha}/>
     <Route exact path="/cadastrar-evento" component={EventoCadastro}/>
-    <Route exact path="/eventodetalhes" component={EventoDetalhes}/>
+    <Route path="/eventodetalhes/:id" component={EventoDetalhes}/>
     </Router>
   </Provider>
 )

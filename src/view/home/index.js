@@ -55,16 +55,15 @@ function Home({match}){
   return (
     <>
     <NavBar/>
+
     <div className="row p-3">
       <h3 className="mx-auto font-weight-bold pb-3"> Eventos Publicados </h3>
 
     <input onChange={(e) => setPesquisa(e.target.value)} type="text" className="form-control text-center" placeholder="Pesquisar evento pelo título..."/>
     </div>
-
     <div className="row p-2">
         {eventos.map(item => <EventoCard  key={item.id} id={item.id} img={item.foto} titulo={item.titulo} detalhes={item.detalhes} visualizacoes={item.visualizacoes}/>) }
     </div>
-
 
     </>
   );
