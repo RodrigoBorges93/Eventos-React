@@ -10,12 +10,12 @@
   max-width: 300px;
 }
 
-.btn-cadastro {
-  background-color: #614ea6;
-  color: #fff;
+.btn-cadastrar {
+  background-color: #fff;
+  color: #614ea6;
 }
 
-.btn-cadastro:hover {
+.btn-cadastrar:hover {
   background-color: #f21667;
   color:#fff;
   transition: .3s ease-in;

@@ -10,7 +10,7 @@ function usuarioReducer(state = INITIAL_STATE, action){
 
     case 'LOG_OUT':
       return {...state, usuarioLogado: 0, usuarioEmail: null}
-
+      
     default:
       return state;
   }

@@ -5,7 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 function NavBar(){
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const usuarioLogado = useSelector( state => state.usuarioEmail);
 
   return (
 
@@ -25,24 +26,18 @@ function NavBar(){
 
       <>
 
-      <li className="nav-item">
-      <Link to="/eventos/meus" className="nav-link" >Meus eventos</Link></li>
-    <li className="nav-item">
-      <Link to="/cadastrar-evento" className="nav-link" >Publicar eventos</Link></li>
+        <li className="nav-item"> <Link to="/eventos/meus" className="nav-link" >Meus eventos</Link></li>
+        <li className="nav-item"><Link to="/cadastrar-evento" className="nav-link" >Publicar eventos</Link></li>
+        <li className="nav-item"><Link className="nav-link"> Bem vindo, {usuarioLogado}!</Link></li>
+        <li className="nav-item"><Link className="nav-link" onClick = {() => dispatch({type: 'LOG_OUT'})} >Logout</Link></li>
 
-      <li className="nav-item"><Link className="nav-link"> Bem vindo, {useSelector( state => state.usuarioEmail)}!</Link></li>
-
-        <li className="nav-item">
-          <Link className="nav-link" onClick = {() => dispatch({type: 'LOG_OUT'})} >Logout</Link></li>
 
       </>
       :
         <>
 
-        <li className="nav-item">
-          <Link to="/cadastro" className="nav-link" >Cadastrar</Link></li>
-        <li className="nav-item">
-          <Link to="/login" className="nav-link" >Login</Link></li>
+        <li className="nav-item"><Link to="/cadastro" className="nav-link" >Cadastrar</Link></li>
+        <li className="nav-item"><Link to="/login" className="nav-link" >Login</Link></li>
 
         </>
 
