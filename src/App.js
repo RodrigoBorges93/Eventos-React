@@ -11,6 +11,7 @@ import NovoUsuario from '../src/view/usuario-novo';
 import Home from '../src/view/home';
 import UsuarioRecuperarSenha from '../src/view/usuario-recuperar-senha';
 import EventoCadastro from '../src/view/evento-cadastro';
+import EventoDetalhes from '../src/view/evento-detalhes';
 
 const App = () => (
   <Provider store={store}>
@@ -21,6 +22,7 @@ const App = () => (
     <Route exact path="/" component={Home}/>
     <Route exact path="/recuperar-senha" component={UsuarioRecuperarSenha}/>
     <Route exact path="/cadastrar-evento" component={EventoCadastro}/>
+    <Route exact path="/eventodetalhes" component={EventoDetalhes}/>
     </Router>
   </Provider>
 )
