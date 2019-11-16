@@ -30,7 +30,7 @@ function Home({match}){
                       // Insert all elements in eventos variable.
                       setEventos(listaEventos);
                   })
-              });
+              }, []);
 
       }
       // Gets all events

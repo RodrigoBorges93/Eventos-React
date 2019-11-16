@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import NavBar from '../../components/navbar';
 import { useSelector } from 'react-redux';
 
-
+// Props takes the event id to be part of the function, like a where in SQL.
 function EventoDetalhes(props){
 
     const [evento, setEvento] = useState({});
@@ -16,15 +16,21 @@ function EventoDetalhes(props){
     const usuario = useSelector( state => state.usuarioEmail);
 
     useEffect(() => {
+      if(carregando){
       firebase.firestore().collection('eventos').doc(props.match.params.id).get().then(resultado => {
         setEvento(resultado.data());
-
-        firebase.storage().ref(`imagens/${evento.foto}`).getDownloadURL().then(url => {
+        firebase.firestore().collection('eventos').doc(props.match.params.id).update('visualizacoes', resultado.data().visualizacoes + 1)
+        firebase.storage().ref(`imagens/${resultado.data().foto}`).getDownloadURL().then(url => {
           setUrlImg(url)
           setCarregando(0);
         });
       });
-    })
+    }
+    else{
+      firebase.storage().ref(`imagens/${evento.foto}`).getDownloadURL().then(url => setUrlImg(url));
+    }
+    // By putting an empty array after the useEffect function, the page just go through all of it 1 time, instead of keeping updating.
+    }, [])
 
   return (
     <>
@@ -45,7 +51,7 @@ function EventoDetalhes(props){
                     <img src={urlImg} className="img-banner" alt="Banner evento"/>
                     <div className="col-12 text-right mt-1 visualizacoes">
 
-                          <i class="fas fa-eye"></i> <span>{evento.visualizacoes}</span>
+                          <i class="fas fa-eye"></i> <span>{evento.visualizacoes + 1}</span>
 
                     </div>
                     <h3 className="mx-auto titulo"><strong>{evento.titulo}</strong></h3>
