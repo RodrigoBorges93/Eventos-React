@@ -23,6 +23,7 @@ const App = () => (
     <Route exact path="/recuperar-senha" component={UsuarioRecuperarSenha}/>
     <Route exact path="/cadastrar-evento" component={EventoCadastro}/>
     <Route path="/eventodetalhes/:id" component={EventoDetalhes}/>
+    <Route path="/editarevento/:id" component={EventoCadastro}/>
     </Router>
   </Provider>
 )
