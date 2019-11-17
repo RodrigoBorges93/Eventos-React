@@ -65,7 +65,7 @@ function NovoUsuario(){
     }
     <div className="form-cadastro cadastro-form">
       <form className="text-center form-login mx-auto mt-1">
-          <i class="far fa-smile-wink text-white fa-5x my-2"></i>
+          <i class="far fa-surprise text-white fa-5x mb-2"></i>
           <h1 className="h3 mb-3 text-white font-weight-bold"> Cadastro </h1>
 
           <input onChange={(e) => setEmail(e.target.value) } type="email" className="form-control my-2" placeholder="E-mail"></input>

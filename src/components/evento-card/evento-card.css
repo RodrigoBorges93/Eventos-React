@@ -23,12 +23,13 @@
 
 .img-cartao{
   max-height: 200px;
-  min-width: 100%
+  min-height: 200px;
+  min-width: 100%;
 }
 
 @media only screen and (max-width: 600px) {
   .img-cartao {
     max-height: 350px;
-    min-width: 100%
+    min-width: 100%;
   }
 }
