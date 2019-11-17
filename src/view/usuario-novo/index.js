@@ -16,7 +16,7 @@ function NovoUsuario(){
   const [carregando, setCarregando] = useState();
 
 
-
+  // Teste
   function cadastrar(){
 
     setCarregando(1);
